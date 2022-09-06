@@ -1,0 +1,24 @@
+{
+  "name": "dk",
+  "version": "1.0.0",
+  "description": "desafio do thiago",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayanecode/todo_list.git"
+  },
+  "author": "Day",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayanecode/todo_list/issues"
+  },
+  "homepage": "https://github.com/dayanecode/todo_list#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "knex": "^2.3.0",
+    "mysql2": "^2.3.3"
+  }
+}
