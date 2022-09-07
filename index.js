@@ -2,20 +2,25 @@ const express = require("express")
 const server = express()
 server.listen(4000)
 
+const database = require("./database")
+
 //POST Criar Tarefas
 server.post("/tarefas", function(req, res) {
-    //res.send("Eu sou um POST")
-    res.status(404)
-    res.send("NOT FOUND")
+    res.status(200)
+    res.send("UAUU, Você está indo muito bem!")
 
 })
 
 //GET Listar Tarefas
-server.get("/tarefas", function(req, res) {
-    //res.send("Eu sou um GET por ID")
-    res.status(404)
-    res.send("NOT FOUND")
-
+server.get("/tasks", function(req, res) {
+    database("tasks").
+        then(function(data) {
+                res.json(data)
+        }).
+        catch(function(error) {
+            res.status(500)
+            res.json(error)
+        })
 })
 
 //PATCH Listar uma tarefa específica
@@ -28,13 +33,9 @@ server.patch("/tarefas/:id", function(req, res) {
 
 //DELETE 
 server.delete("/tarefas/:id", function(req, res) {
-    //res.send("Eu sou DELETE")
-    res.status(404)
+     res.status(404)
     res.send("NOT FOUND")
 })
 
 
 //console.log("oi")
-//POST - Cadastrar
-//GET - Obter
-//DELETE - Deletar um item da lista
