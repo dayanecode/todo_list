@@ -1,14 +1,20 @@
-const express = require("express")
-const server = express()
-server.listen(4000)
 
+const server = require("./server")
 const database = require("./database")
+
 
 //POST Criar Tarefas
 server.post("/tarefas", function(req, res) {
-    res.status(200)
-    res.send("UAUU, Você está indo muito bem!")
-
+    database("tasks").
+        insert(req.body).
+        then(function(data) {
+            res.status(201)
+            res.json(data)
+    }).
+        catch(function(error){
+            res.status(500)
+            res.json(error)
+        })
 })
 
 //GET Listar Tarefas
@@ -38,4 +44,5 @@ server.delete("/tarefas/:id", function(req, res) {
 })
 
 
-//console.log("oi")
+
+server.listen(4000)
