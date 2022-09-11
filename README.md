@@ -1,3 +1,3 @@
 #LISTA DE TAREFAS
 
-Projeto desenvolvido pela Dayane, Marô e Nat.
+Projeto desenvolvido pelas meninas do Projeto ADA.
