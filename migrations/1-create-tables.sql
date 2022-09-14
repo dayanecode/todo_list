@@ -1,0 +1,20 @@
+CREATE TABLE tasks(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    task VARCHAR(255) NOT NULL,
+    start_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deadline DATETIME,
+    id_comment INT
+);
+
+CREATE TABLE comments(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_task INT NOT NULL,
+    id_user INT NOT NULL,
+    comments VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user VARCHAR(255) NOT NULL
+);
