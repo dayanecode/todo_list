@@ -9,7 +9,7 @@ COPY . .
 
 
 RUN apt-get update
-RUN sudo apt-get install -y nodejs
+RUN apt-get install -y nodejs
 RUN apt-get install -y npm
 
 RUN npm install
