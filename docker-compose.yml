@@ -1,0 +1,29 @@
+networks:
+  app_network:
+
+
+services:
+
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_USER: appuser
+      MYSQL_PASSWORD: abc123
+    networks:
+      - app_network
+    ports:
+      - 3306:3306
+
+  application:
+    build: .
+    environment:
+      AUTH_TOKEN: myAuthToken
+      DATABASE_HOST: database
+      DATABASE_USER: root
+      DATABASE_PASS: 123456
+      DATABASE_NAME: todo
+    networks:
+      - app_network
+    ports:
+      - 4000:4000
