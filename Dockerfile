@@ -14,8 +14,9 @@ RUN apt-get install -y npm
 
 RUN npm install
 
+RUN npm install -g knex 
+
 #Configura um comando padrão que vai ser executado quando subir o container
 CMD [ "node","index.js" ]
-
 
 
