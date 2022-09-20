@@ -25,5 +25,7 @@ services:
       DATABASE_NAME: todo
     networks:
       - app_network
+    volumes:
+      - .:/srv/app
     ports:
       - 3000:3000
