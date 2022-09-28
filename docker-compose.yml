@@ -30,3 +30,7 @@ services:
       - .:/srv/app
     ports:
       - 3000:3000
+    depends_on:
+      - database
+    restart: on-failure
+    command: sh -c "npm install knex && npm run start && knex migrate:up && node index.js"
